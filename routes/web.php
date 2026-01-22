@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ThingController;
+use App\Http\Controllers\PlaceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,7 @@ Route::post('/signup', [AuthController::class, 'register'])->name('register.stor
 
 Route::get('/signin', [AuthController::class, 'signin'])->name('login');
 Route::post('/signin', [AuthController::class, 'authenticate']);
-Route::get('/auth/logout', [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::resource('things', ThingController::class);
+Route::resource('place', PlaceController::class);

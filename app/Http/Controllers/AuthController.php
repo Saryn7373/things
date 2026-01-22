@@ -20,7 +20,7 @@ class AuthController extends Controller {
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return redirect()->route('signin');
+        return redirect()->route('login');
     }
 
     public function signin()
